@@ -10,6 +10,7 @@
     "ejs": "~0.8.4",
     "express-partials": "~0.1.1",
     "nodeutil": "0.0.27",
-    "request": "~2.27.0"
+    "request": "~2.27.0",
+    "underscore": "~1.5.2"
   }
 }
