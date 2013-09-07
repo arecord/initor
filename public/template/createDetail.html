@@ -1,0 +1,36 @@
+  <h1>Continue {{createModel.name}} Project</h1>
+  <p>{{createModel.desc}}</p>
+  <div class="container">
+
+      <form>
+      <fieldset>
+         <legend>{{createModel.name}}</legend>
+
+         <div id="projectName" class="control-group">
+           <label>Project name</label>
+           <input type="text" ng-model="projectName" placeholder="input your project name..." ng-change="blur()">
+           <span class="help-block hide">well done</span>
+         </div>
+         <label class="checkbox">
+            <input type="checkbox"><span class="metro-checkbox">Check me out</span>
+         </label>
+
+         <label class="radio">
+           <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+           <span class="metro-radio">jade(default)</span>
+        </label>
+        <label class="radio">
+           <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+           <span class="metro-radio">ejs</span>
+        </label>
+        <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
+         <button type="submit" class="btn">Submit</button>
+      </fieldset>
+   </form>
+  </div>
+
+
+ 
+
+
+
