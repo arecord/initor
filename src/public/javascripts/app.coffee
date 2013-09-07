@@ -7,9 +7,12 @@ init = ($) ->
     $routeProvider.when '/',
       controller: ListCtrl
       templateUrl: '/template/index.html'
-    .when '/home',
+    .when '/create',
       controller: ListCtrl
-      templateUrl: '/html/listitem.html'
+      templateUrl: '/template/create.html'
+    .when '/projectList',
+      controller: ListCtrl
+      templateUrl: '/template/projectList.html'
     .otherwise
       redirectTo:'/'
 

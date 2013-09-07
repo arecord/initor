@@ -17,14 +17,18 @@
 
     <div class="win-commandlayout win-ui-dark">
       <div class="container">
-        <a class="win-command" href="#">
+        <a class="win-command" href="/">
            <span class="win-commandicon win-commandring icon-home"></span>
            <span class="win-label">Home</span>
         </a>
+        <a class="win-command" href="#/projectList">
+           <span class="win-commandicon win-commandring icon-list-3"></span>
+           <span class="win-label">List Project</span>
+        </a>
         <hr class="win-command" />
-        <a class="win-command" href="#">
+        <a class="win-command" href="#/create">
            <span class="win-commandicon win-commandring icon-plus-5"></span>
-           <span class="win-label">Add</span>
+           <span class="win-label">Create</span>
         </a>
         <a class="win-command" href="#">
            <span class="win-commandicon win-commandring icon-stop"></span>
@@ -43,7 +47,7 @@
         </a>
       </div>
     </div>
-    <div class="container" ng-view>
+    <div class="container slide" ng-animate="{enter: 'view-enter'}" ng-view>
       <%- body %>
     </div><!-- end .container -->
     <script type="text/javascript" src='/javascripts/app.js'></script>
