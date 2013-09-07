@@ -1,8 +1,10 @@
+(function() {
+  var defaultController;
 
-/*
- * GET home page.
- */
+  defaultController = require('../controllers/index');
 
-exports.index = function(req, res){
-  res.render('index', { title: 'Express' });
-};
+  exports.setRoute = function(app) {
+    return app.get('/', defaultController.index);
+  };
+
+}).call(this);

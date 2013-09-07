@@ -4,11 +4,11 @@ Module dependencies.
 
 
 (function() {
-  var app, express, http, partials, path, routes, user;
+  var app, config, express, http, partials, path, route, user;
 
   express = require("express");
 
-  routes = require("./routes");
+  route = require("./routes");
 
   user = require("./routes/user");
 
@@ -17,6 +17,8 @@ Module dependencies.
   path = require("path");
 
   partials = require('express-partials');
+
+  config = require('./config/global');
 
   app = express();
 
@@ -38,13 +40,13 @@ Module dependencies.
 
   app.use(express["static"](path.join(__dirname, "public")));
 
+  config.setLocals(app);
+
+  route.setRoute(app);
+
   if ("development" === app.get("env")) {
     app.use(express.errorHandler());
   }
-
-  app.get("/", routes.index);
-
-  app.get("/users", user.list);
 
   http.createServer(app).listen(app.get("port"), function() {
     return console.log("Express server listening on port " + app.get("port"));

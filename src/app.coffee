@@ -3,11 +3,12 @@
 Module dependencies.
 ###
 express = require("express")
-routes = require("./routes")
+route = require("./routes")
 user = require("./routes/user")
 http = require("http")
 path = require("path")
 partials = require('express-partials')
+config = require('./config/global')
 app = express()
 
 # all environments
@@ -22,10 +23,14 @@ app.use express.methodOverride()
 app.use app.router
 app.use express.static(path.join(__dirname, "public"))
 
+# set app global config
+config.setLocals(app)
+# set all route
+route.setRoute(app)
+
 # development only
 app.use express.errorHandler()  if "development" is app.get("env")
-app.get "/", routes.index
-app.get "/users", user.list
+
 http.createServer(app).listen app.get("port"), ->
   console.log "Express server listening on port " + app.get("port")
 
