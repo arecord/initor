@@ -1,0 +1,8 @@
+
+.win-ui-dark .win-command.start .win-commandicon,
+.win-ui-dark .win-command.start .win-label {
+  color: #01a31c;
+}
+.win-ui-dark .win-command.start .win-commandring {
+  border-color: #01a31c;
+}
