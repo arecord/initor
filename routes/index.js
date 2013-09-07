@@ -5,8 +5,9 @@
 
   exports.setRoute = function(app) {
     app.get('/', defaultController.index);
-    app.post('/create', defaultController.getCreateProject);
-    return app.get('/create', defaultController.createProject);
+    app.post('/create', defaultController.createProject);
+    app.get('/create', defaultController.getCreateProject);
+    return app.get('/projectList', defaultController.getProjectList);
   };
 
 }).call(this);
