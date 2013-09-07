@@ -11,6 +11,9 @@ initor.savePrj('testprj', '/tmp/testprj', 'running', new Date(), function(){
 
 // list all project
 console.log(initor.getExistsPrj());
+
+initor.resetPrjStatus();
+
 // list specify project
 console.log(initor.getExistsPrj('testprj'));
 
