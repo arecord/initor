@@ -1,2 +1,6 @@
-$(document).ready () ->
+init = ($) ->
   console.log 'hello world'
+
+# initial
+init(jQuery)
+
