@@ -32,7 +32,7 @@ init = ($) ->
 
     createType = $routeParams.chooseType
     $scope.createModel = $scope.createData[createType]
-    
+
     $scope.blur = () ->
       node = $("#projectName")
       if ($scope.projectName <= 0)
@@ -47,7 +47,9 @@ init = ($) ->
       if ! $scope.projectName or $scope.projectName <= 0
         e.preventDefault()
         $scope.blur()
-        alert('Please input all project item')
+        return alert('Please input all project item')
+
+      $("#loading-mask").show()
 
   ListCtrl = ($scope) ->
     console.log 'run list'

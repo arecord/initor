@@ -1,8 +1,8 @@
   <h1>Continue {{createModel.name}} Project</h1>
   <p>{{createModel.desc}}</p>
-  <div class="container">
+  <div id="createDetail" class="container">
 
-      <form class="form-horizontal" action="/create" method="POST" ng-submit="submit($event)">
+    <form class="form-horizontal" action="/create" method="POST" ng-submit="submit($event)">
       <fieldset>
         <legend>{{createModel.name}}</legend>
         <div class="hidden">
@@ -30,6 +30,11 @@
         </div>
       </fieldset>
    </form>
+   <div id="loading-mask">
+    <div class="progress progress-indeterminate">
+      <div class="win-ring"></div>
+    </div>
+   </div>
   </div>
 
 

@@ -56,6 +56,7 @@
           $scope.blur();
           return alert('Please input all project item');
         }
+        return $("#loading-mask").show();
       };
     };
     ListCtrl = function($scope) {
