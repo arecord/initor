@@ -37,14 +37,26 @@
         }
       };
       createType = $routeParams.chooseType;
+      $scope.createModel = $scope.createData[createType];
       $scope.blur = function() {
-        if ($scope.projectName.length > 0) {
-          return $("#projectName").addClass("success").find(".help-block").show();
+        var node;
+        node = $("#projectName");
+        if ($scope.projectName <= 0) {
+          return node.addClass("success").find(".help-block").show();
         } else {
-          return $("#projectName").removeClass("success").find(".help-block").hide();
+          node.removeClass("success").find(".help-block").hide();
+          return node.find("input[type=text]").focus();
         }
       };
-      return $scope.createModel = $scope.createData[createType];
+      return $scope.submit = function(e) {
+        var target;
+        target = e.target;
+        if (!$scope.projectName || $scope.projectName <= 0) {
+          e.preventDefault();
+          $scope.blur();
+          return alert('Please input all project item');
+        }
+      };
     };
     ListCtrl = function($scope) {
       return console.log('run list');

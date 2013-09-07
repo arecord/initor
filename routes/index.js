@@ -4,7 +4,9 @@
   defaultController = require('../controllers/index');
 
   exports.setRoute = function(app) {
-    return app.get('/', defaultController.index);
+    app.get('/', defaultController.index);
+    app.post('/create', defaultController.getCreateProject);
+    return app.get('/create', defaultController.createProject);
   };
 
 }).call(this);

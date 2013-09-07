@@ -31,13 +31,23 @@ init = ($) ->
         desc: 'database nd you can choose you own database mix with node.js.'
 
     createType = $routeParams.chooseType
-    $scope.blur = () ->
-      if ($scope.projectName.length > 0)
-        $("#projectName").addClass("success").find(".help-block").show()
-      else
-        $("#projectName").removeClass("success").find(".help-block").hide()
-
     $scope.createModel = $scope.createData[createType]
+    
+    $scope.blur = () ->
+      node = $("#projectName")
+      if ($scope.projectName <= 0)
+        node.addClass("success").find(".help-block").show()
+      else
+        node.removeClass("success").find(".help-block").hide()
+        node.find("input[type=text]").focus()
+
+    $scope.submit = (e) ->
+      target = e.target
+
+      if ! $scope.projectName or $scope.projectName <= 0
+        e.preventDefault()
+        $scope.blur()
+        alert('Please input all project item')
 
   ListCtrl = ($scope) ->
     console.log 'run list'
