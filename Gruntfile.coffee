@@ -75,7 +75,7 @@ module.exports = (grunt)->
     grunt.log.writeln "#{target}: #{files} has #{action}"
 
     # coffeelint
-    grunt.config ['coffeelint', target], src: files
+    # grunt.config ['coffeelint', target], src: files
 
     # coffee
     coffeeData = grunt.config ['coffee', target]
@@ -87,7 +87,6 @@ module.exports = (grunt)->
 
   # tasks.
   grunt.registerTask 'compile', [
-    'coffeelint'
     'coffee'
   ]
 
