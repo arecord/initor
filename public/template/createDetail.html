@@ -2,7 +2,7 @@
   <p>{{createModel.desc}}</p>
   <div class="container">
 
-      <form class="form-horizontal" action="/create/" method="POST" ng-submit="submit($event)">
+      <form class="form-horizontal" action="/create" method="POST" ng-submit="submit($event)">
       <fieldset>
         <legend>{{createModel.name}}</legend>
         <div class="hidden">
@@ -11,7 +11,7 @@
         <div id="projectName" class="control-group">
            <label  class="control-label" >Project name</label>
            <div class="controls">
-             <input type="text" ng-model="projectName" placeholder="input your project name..." ng-change="blur()">
+             <input type="text" ng-model="projectName" placeholder="input your project name..." ng-change="blur()" name="name">
              <span class="help-block hide">well done</span>
            </div>
         </div>
