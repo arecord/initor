@@ -4,7 +4,7 @@
 var initor = require('./lib/initor')
 
 // create a project
-initor.savePrj('testprj', '/tmp/testprj', 'running', new Date(), function(){
+initor.savePrj('testprj', '/tmp/testprj', 'running', new Date().getTime(), function(){
   console.log('create prj ok...');
 });
 
